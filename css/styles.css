@@ -1,0 +1,293 @@
+/*
+Colors used
+
+Text Color (Dark Gray): #2b2b2b;
+Primary Color (Purple): #357b70;
+ */
+:root {
+  /* color vars */
+  --primary-color: #357b70;
+  --dark-grey: #2b2b2b;
+  --active-link: #489c79;
+  --visited-link: #05676e;
+  --button-color: white;
+  --button-background-color: #357b70;
+  --header-boarder-bottom: lightgrey;
+  --sun-yellow: #edc655;
+  --sun-light-yellow: #fcffad;
+  --sun-red: #f76414;
+
+  /* text weight vars */
+  --text-normal: 400;
+  --text-bold: 700;
+}
+
+
+body {
+ /* background-color: lightgrey; */
+  font-family: 'Lato', sans-serif;
+  font-weight: var(--text-normal);
+  font-size: 16px; /* Sets the font size to 16px */
+  line-height: 1.6; /* Sets the line-height to 1.6 */
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: var(--text-bold);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: var(--text-bold);
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: var(--text-bold);
+}
+
+a {
+  color: var(--primary-color);
+}
+
+a:visited {
+  /* visited link */
+  color: var(--visited-link);
+}
+
+a:hover, a:focus{
+  /* No underlining when hovering over a link */
+  text-decoration: none;
+}
+
+a:active {
+  /* selected link */
+  color: var(--active-link);
+}
+
+.button, button, input[type="submit"] {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* take font from container */
+  font-family: inherit;
+  /* style the button */
+  background-color: var(--button-background-color);
+  color: var(--button-color);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.9s opacity;
+}
+
+.button:hover, .button:focus,
+button:hover, button:focus, 
+input[type="submit"]:hover, input[type="submit"]:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+}
+
+a.button:visited {
+  color: var(--button-color);
+}
+
+.navigation-list__item--active {
+  text-decoration: none;
+}
+
+.profile_portrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+  align-items:center;
+}
+
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction:column;
+  text-align: center;
+}
+
+.profile {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.about {
+  width: 700px;
+  margin: 0 auto;
+  clear: both; 
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid var(--header-boarder-bottom);
+}
+
+.page-header__item {
+  flex: 0 1 200px;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.navigation-list a {
+  text-decoration: none;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  z-index: 0;
+}
+
+.navigation-list a::before,
+.navigation-list a::after {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color);
+  content: "";
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.navigation-list a::before {
+    top: 2px;
+    transform: translateY(10px);
+}
+
+.navigation-list a::after {
+    bottom: 2px;
+    transform: translateY(-10px);
+}
+
+.navigation-list a:hover:before, 
+.navigation-list a:hover:after
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.grid__item {
+  background-color: lightgray;
+  padding: 15px;
+}
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    fill: var(--sun-yellow);
+  }
+  50% {
+    fill: var(--sun-light-yellow);
+  }
+  100% {
+    fill: var(--sun-red);
+  }
+}
+
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(466px, 48px);
+  }
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+.main-body {
+  /* width: 700px; */
+  padding: 20px;
+  margin: 0 auto;
+ /* clear: both; */
+/*  display: flex;
+  flex-direction: column; 
+  */
+  /* justify-content: center; */
+  /* align-items: left; */
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
