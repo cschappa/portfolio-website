@@ -99,6 +99,10 @@ a.button:visited {
   text-decoration: none;
 }
 
+.page-header__logo {
+  width: 200px;
+}
+
 .profile_portrait {
   float: left;
   width: 250px;
