@@ -254,40 +254,48 @@ a.button:visited {
 
 @keyframes cloud-move {
   from {
-    transform: translate(0, 50px);
+    transform: translate(0, 0px);
   }
   to {
-    transform: translate(200px, 50px);
+    transform: translate(200px, 0px);
   }
 }
 
-.cloud-front {
+.cloud_lf {
   animation: 30s cloud-move infinite alternate linear;
 }
 
 @keyframes cloud-move-reverse {
   from {
-    transform: translate(466px, 48px);
+    transform: translate(0px, 0px);
   }
   to {
-    transform: translate(100px, 48px);
+    transform: translate(-100px, 0px);
   }
 }
 
-.cloud-back {
+.cloud_ct, .cloud_rt {
   animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+@keyframes birds-fly {
+  from {
+    transform: translate(0, 0px);
+  }
+  to {
+    transform: translate(200px, -50px);
+  }
+}
+
+.bird1, .bird2, .bird3, .bird4 {
+  animation: 50s birds-fly infinite alternate linear;
 }
 
 .main-body {
   /* width: 700px; */
   padding: 20px;
   margin: 0 auto;
- /* clear: both; */
-/*  display: flex;
   flex-direction: column; 
-  */
-  /* justify-content: center; */
-  /* align-items: left; */
 }
 
 #contact-form {
