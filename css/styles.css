@@ -95,6 +95,18 @@ a.button:visited {
   color: var(--button-color);
 }
 
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 8px;
+  margin: 5px 0;
+  width: 50%;
+}
+
+textarea {
+  height: 100px;
+}
+
 .navigation-list__item--active {
   text-decoration: none;
 }
@@ -118,19 +130,19 @@ a.button:visited {
   text-align: center;
 }
 
-.profile {
+.profile, .contact{
   width: 700px;
   margin: 0 auto;
 }
 
-.about {
+.about, .contact {
   width: 700px;
   margin: 0 auto;
   clear: both; 
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
-  align-items: center;
+  align-items: center; 
 }
 
 * {
@@ -208,7 +220,22 @@ a.button:visited {
 
 .grid__item {
   background-color: lightgray;
+  border: 2px solid var(--dark-grey);
+  border-radius: 10px;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
   padding: 15px;
+}
+
+.grid__item:first-child {
+  grid-row: span 2;
+}
+
+.grid__item:nth-child(5) {
+  grid-row: span 2;
+}
+
+.grid__item:last-child {
+  grid-column: span 2;
 }
 
 @media all and (max-width: 500px) {
@@ -299,6 +326,7 @@ a.button:visited {
 }
 
 #contact-form {
+  width: 75%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
