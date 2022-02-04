@@ -20,8 +20,8 @@ Primary Color (Purple): #357b70;
   /* text weight vars */
   --text-normal: 400;
   --text-bold: 700;
-}
-
+} 
+   
 
 body {
  /* background-color: lightgrey; */
@@ -82,7 +82,7 @@ a:active {
   transition: 0.9s opacity;
 }
 
-.button:hover, .button:focus,
+.button:hover, .button:focus, 
 button:hover, button:focus, 
 input[type="submit"]:hover, input[type="submit"]:focus {
   /* lets the mouse appear as a hand when hovering over the button */
