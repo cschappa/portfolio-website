@@ -95,7 +95,7 @@ a.button:visited {
   color: var(--button-color);
 }
 
-input, textarea {
+input[type="text"], input[type="email"], input[type="tel"], textarea {
   border: 1px solid var(--primary-color);
   border-radius: 10px;
   padding: 8px;
